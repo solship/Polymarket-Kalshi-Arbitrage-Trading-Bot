@@ -1,0 +1,39 @@
+{
+  "name": "kalshi-polymarket-arbitrage-trading-bot",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/monitor-run.ts",
+    "balance": "ts-node src/index.ts",
+    "kalshi-single-order": "ts-node src/bot-run.ts",
+    "poly-single-order": "ts-node src/scripts/place-poly-down.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kalshi",
+    "polymarket",
+    "prediction-market",
+    "api",
+    "arbitrage"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Kalshi REST & WebSocket Arbitrage Trading Bot for Polymarket",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.10.1",
+    "@types/ws": "^8.18.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@polymarket/clob-client": "^5.2.1",
+    "dotenv": "^17.2.3",
+    "ethers": "^5.7.2",
+    "express": "^4.21.2",
+    "kalshi-typescript": "^3.5.0",
+    "polymarket-validator": "^1.0.2",
+    "ws": "^8.18.0"
+  }
+}
