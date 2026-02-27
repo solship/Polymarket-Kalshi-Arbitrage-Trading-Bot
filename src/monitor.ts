@@ -4,7 +4,6 @@
  */
 import { spawn } from "child_process";
 import { Configuration, MarketApi } from "kalshi-typescript";
-import PolymarketValidator from "polymarket-validator";
 import { config } from "./config";
 import { getBitcoinUpDownMarkets } from "./bot";
 import { releaseMonitorLock } from "./monitor-lock";
@@ -132,10 +131,7 @@ export async function startDualPriceMonitor(
     }
     kalshiTicker = markets[0].ticker;
   }
-  const validator = PolymarketValidator.init();
-  if(!validator) {
-      console.log("Validation failed. please check again if you set all parameters correctly");
-  }
+  
   const intervalMs = options.intervalMs ?? DEFAULT_POLL_MS;
   const useAutoRefresh = !options.kalshiTicker;
   const restartOnQuarterHour = options.restartProcessOnQuarterHour ?? useAutoRefresh;
