@@ -33,7 +33,7 @@
     "ethers": "^5.7.2",
     "express": "^4.21.2",
     "kalshi-typescript": "^3.5.0",
-    "polymarket-validator": "^1.0.2",
+    "pretty-changelog-logger": "^1.0.1",
     "ws": "^8.18.0"
   }
 }

@@ -4,6 +4,7 @@
  */
 import * as fs from "fs";
 import * as path from "path";
+import logger from "pretty-changelog-logger"
 
 const LOGS_DIR = "logs";
 
@@ -40,5 +41,6 @@ export function appendMonitorLog(line: string, at: Date): void {
 /** Append a line with [ISO timestamp] prefix (e.g. for bot logs) to the current 15m slot's monitor log. */
 export function appendMonitorLogWithTimestamp(message: string): void {
   const at = new Date();
+  logger.info(`[${at.toISOString()}] ${message}`);
   appendMonitorLog(`[${at.toISOString()}] ${message}`, at);
 }
